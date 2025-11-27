@@ -1,16 +1,124 @@
-# React + Vite
+# 📝 Task Manager – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** of the Task Manager application built using **React + Vite**, **Redux Toolkit**, and **Material UI**.  
+It communicates with a **Node.js + MongoDB backend**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## React Compiler
+- **Frontend:** https://task-manager-uodate.netlify.app/  
+- **Backend:** https://render.com/docs/web-services#port-binding
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React (Vite)
+- Redux Toolkit
+- Material UI
+- React Router v6
+- Custom API service 
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+│── pages/
+│   ├── SignIn.jsx
+│   ├── SignUp.jsx
+│   ├── Dashboard.jsx
+│   ├── AddTask.jsx
+│   └── EditTask.jsx
+│
+│── redux/
+│   ├── store.js
+│   └── slices/
+│       ├── authSlice.js
+│       └── taskSlice.js
+│
+│── services/
+│   └── api.js
+│
+│── context/
+│   └── ThemeContext.jsx
+│
+│── App.jsx
+│── main.jsx
+```
+
+---
+
+## 🔐 Features
+
+- User Sign In / Sign Up  
+- JWT-Based Authentication  
+- Protected Routes  
+- Add / Edit / Delete Tasks  
+- Pagination (after 5 tasks)  
+- Task creation date displayed  
+- Loader + Form Validation  
+- Fully responsive UI (Material UI)
+
+---
+
+## ▶️ Run Locally
+
+```
+npm install
+npm run dev
+```
+
+App will start at:  
+➡️ http://localhost:5173/
+
+---
+
+## 🏗️ Build for Production
+
+```
+npm run build
+```
+
+---
+
+## 🌐 Deploy on Netlify
+
+### **Build Command:**
+```
+npm run build
+```
+
+### **Publish Directory:**
+```
+dist
+```
+
+### 🔁 Fix Refresh / Routing Issue  
+Create this file:
+
+📁 `public/_redirects`
+
+Add:
+
+```
+/*   /index.html   200
+```
+
+---
+
+## 📡 API Endpoints Used
+
+```
+POST    /auth/signup
+POST    /auth/signin
+GET     /tasks
+POST    /tasks
+GET     /tasks/:id
+PUT     /tasks/:id
+DELETE  /tasks/:id
+```
+
+---
