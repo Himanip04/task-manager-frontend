@@ -6,12 +6,15 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import ThemeContextProvider from '../context/ThemeContext.jsx';
 
-
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ThemeContextProvider>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </ThemeContextProvider>
 );
+

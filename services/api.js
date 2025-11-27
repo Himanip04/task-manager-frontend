@@ -1,7 +1,7 @@
 import { store } from '../src/redux/store';
 
 
-const BASE_URL = 'https://task-manager-backend-6itz.onrender.com/';
+const BASE_URL = 'https://task-manager-backend-6itz.onrender.com/api';
 
 export async function apiRequest(endpoint, method = 'GET', body = null) {
   const state = store.getState();

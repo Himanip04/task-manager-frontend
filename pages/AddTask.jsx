@@ -47,10 +47,11 @@ export default function AddTask() {
 
   // Handle Add & Update
   const handleSubmit = async () => {
-    if (!task.title) {
-      setError('Title is required!');
+   if (!task.title.trim() || !task.description.trim()) {
+      setError('All fields are required!');
       return;
     }
+
 
     try {
       if (isEdit) {
@@ -90,11 +91,8 @@ export default function AddTask() {
             {isEdit ? 'Edit Task' : 'Add New Task'}
           </Typography>
 
-          {error && (
-            <Alert severity='error' sx={{ mb: 2 }}>
-              {error}
-            </Alert>
-          )}
+           {error && <Typography color='error'>{error}</Typography>}
+         
 
           {/* Title */}
           <TextField

@@ -17,6 +17,10 @@ export default function SignUp() {
   const [err, setErr] = useState('');
 
   const handleSignUp = async () => {
+      if (!email.trim() || !password.trim() || !name.trim() || !role.trim()) {
+      setErr("All fields are required!");
+      return;
+    }
     try {
       const res = await apiRequest('/auth/signup', 'POST', {
          name,
