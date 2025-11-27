@@ -1,18 +1,18 @@
-import { store } from "../src/redux/store";
+import { store } from '../src/redux/store';
 
 
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = 'https://task-manager-backend-6itz.onrender.com/';
 
-export async function apiRequest(endpoint, method = "GET", body = null) {
+export async function apiRequest(endpoint, method = 'GET', body = null) {
   const state = store.getState();
   const token = state.auth.token;
 
   const headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   };
 
   if (token) {
-    headers["Authorization"] = `Bearer ${token}`;
+    headers['Authorization'] = `Bearer ${token}`;
   }
 
   const options = {
@@ -34,7 +34,7 @@ export async function apiRequest(endpoint, method = "GET", body = null) {
   }
 
   if (!response.ok) {
-    throw new Error(data?.error || "Request failed");
+    throw new Error(data?.error || 'Request failed');
   }
 
   return data;
